@@ -1,0 +1,378 @@
+
+/* ==================================
+   general setup
+   ================================== */
+
+/* ==================================
+   html
+   ================================== */
+  
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+/* ==================================
+   body
+   ================================== */
+
+body {
+    font-size: 0.99rem;
+}
+
+/* ==================================
+   all elements
+   ================================== */
+*, *::before, *::after {
+    box-sizing: inherit;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==================================
+   navbar-btn
+   ================================== */
+
+.navbar-btn {
+    display: none;
+}
+
+.navbar-btn:checked ~ .body-header > .navbar-btn-label > .navbar-icon {
+    background: transparent;
+    transition: 0.4s;
+}
+
+.navbar-btn:checked ~ .body-header > .navbar-btn-label > .navbar-icon::before {
+    top: 0;
+    transform: rotate(405deg);
+    transition: 0.4s;
+}
+
+.navbar-btn:checked ~ .body-header > .navbar-btn-label > .navbar-icon::after {
+    top: 0;
+    transform: rotate(-405deg);
+    transition: 0.4s;
+}
+
+.navbar-btn:checked ~ .navbar {
+    display: block;
+}
+
+/* ==================================
+   mobile setup
+   ================================== */
+
+/* ==================================
+   body-header
+   ================================== */
+
+  
+.body-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgreen;
+    padding: 1em;  
+}
+
+/* ==================================
+   logo
+   ================================== */
+
+.logo {
+    color: red;
+    font-weight: 600;
+    font-family:'Times New Roman', Times, serif;
+}
+
+/* ==================================
+   .navbar-icon
+   ================================== */
+
+.navbar-icon {
+    display: block;
+    width: 1.3rem;
+    height: 0.05rem;
+    background-color: black;
+    margin: 0.5rem 0 0 0;
+    position: relative;
+    transition: 0.4s;
+}
+
+.navbar-icon::before,
+.navbar-icon::after {
+    content:'';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    transition: 0.4s;
+}
+
+.navbar-icon::before {
+    top: -0.3rem;
+}
+
+.navbar-icon::after {
+    top: 0.3rem;
+}
+
+/* ==================================
+   .navbar
+   ================================== */
+
+.navbar {
+    display: none;
+    background-color: hsla(177, 70%, 41%, 0.303);
+}
+
+/* ==================================
+   navbar-link
+   ================================== */
+
+.navbar-link {
+    display: block;
+    color: red;
+    position: relative;
+    width: 6em;
+    padding: 0.5em;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.navbar-link::before {
+    content: "";
+    display: block;
+    top: -10%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    margin: 0.5em 0;
+    transform-origin: left;
+    transform: scaleX(0%);
+    border-radius: 50%;
+    background: gold;
+    transition: all linear 0.5s;
+    transition-delay: 0.4s;
+    opacity: 0.5;
+}
+
+.navbar-link:hover::before {
+    transform: scaleX(100%);
+}
+
+.navbar-link:hover {
+    color: white;
+    background-color: aqua;
+    border-bottom: 2px solid black;
+}
+
+/* ==================================
+   body-main
+   ================================== */
+
+.body-main {
+    background-color: lightblue;
+    height: 216vh;
+}
+
+/* ==================================
+   article
+   ================================== */
+
+.article {
+    padding: 3vh 0;
+    height: 30vh;
+}
+
+/* ==================================
+   aside
+   ================================== */
+
+.aside {
+    height: 50vh;
+    background-color: hsla(120, 73%, 75%, 0.432);
+}
+
+/* ==================================
+   body-footer
+   ================================== */
+
+.body-footer {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+    width: 100%;
+    background-color: hsla(0, 23%, 45%, 0.514);
+}
+
+/* ==================================
+   for screen of min-size := 40em = 640px
+   ================================== */
+
+@media only screen and (min-width: 40em) {
+
+    /* ==================================
+       body-header
+       ================================== */
+    
+    .body-header {
+        display: block;
+        float: left;
+        height: 3.2em;
+    }
+
+    /* ==================================
+       navbar-btn-label
+       ================================== */
+
+    .navbar-btn-label {
+        display: none;
+    }
+    
+    /* ==================================
+       navbar
+       ================================== */
+    
+    .navbar {
+        display: flex;
+        background-color: lightgreen;
+        justify-content: right;
+        padding: 0.5em 0;
+        height: 3.2em;
+    }
+
+     /* ==================================
+       navbar-menu
+       ================================== */
+    
+    .navbar-menu {
+        display: flex;
+    }
+
+    /* ==================================
+       navbar-link
+       ================================== */
+
+    .navbar-item:nth-child(3) {
+        display: none;
+    }
+
+    /* ==================================
+       navbar-link
+       ================================== */
+
+    .navbar-link {
+        text-align: center;
+    }
+
+    /* ==================================
+       body-main
+       ================================== */
+
+    .body-main {
+        display: block;
+        float: left;
+        width: 65vw;
+        clear: both;
+        height: 180vh; 
+    }
+
+    /* ==================================
+       article
+       ================================== */
+
+    .article {
+        height: 30vh;
+    }
+
+
+    /* ==================================
+       aside
+       ================================== */
+
+    .aside {
+        display: block;
+        margin: 0 0 0 65%;
+        width: 35%;
+        padding: 0 2rem;
+        border-top: none;
+        height: 180vh;
+    }
+}
+
+/* ==================================
+   for screen of min-size := 80em = 1280px
+   ================================== */
+
+   @media only screen and (min-width: 80em) {
+
+    /* ==================================
+       body-header
+       ================================== */
+    
+    .body-header {
+        display: block;
+        float: none;
+        padding: 1.1em;
+    }
+    
+    /* ==================================
+       navbar
+       ================================== */
+    
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        float: left;
+        width: 15%;
+        height: 190vh;
+        align-items: center;
+        background-color: hsla(177, 70%, 41%, 0.303);
+    }
+
+     /* ==================================
+       navbar-menu
+       ================================== */
+    
+    .navbar-menu {
+        display: block;
+    }
+
+    /* ==================================
+       navbar-link
+       ================================== */
+
+    .navbar-link {
+        text-align: left;
+    }
+
+    /* ==================================
+       body-main
+       ================================== */
+
+    .body-main {
+        display: block;
+        float: left;
+        width: 65%;
+        clear: none;
+        padding: 0 1rem 0 2rem;
+        height: 190vh; 
+    }
+
+    /* ==================================
+       aside
+       ================================== */
+
+    .aside {
+        display: block;
+        margin: 0 0 0 65%;
+        width: 35%;
+        padding: 0 2rem;
+        border-top: none;
+        height: 190vh;
+    }
+}
