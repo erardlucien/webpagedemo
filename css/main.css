@@ -198,6 +198,32 @@ body {
 }
 
 /* ==================================
+   up
+   ================================== */
+
+   .up {
+       position: absolute;
+       top: auto;
+       left: 75vw;
+       width: 60px;
+       height: 60px;
+       border-radius: 100%;
+       background: gold;
+       opacity: 0.5;
+       text-align: center;
+   }
+
+/* ==================================
+   up-icon
+   ================================== */
+
+   .up-icon {
+       color: white;
+       opacity: 0.9;
+       font-size: 40px;
+   }
+
+/* ==================================
    body-footer
    ================================== */
 
