@@ -277,6 +277,7 @@ body {
     
     .navbar-menu {
         display: flex;
+        justify-content: right;
     }
 
     /* ==================================
