@@ -27,8 +27,8 @@ body {
     box-sizing: inherit;
     text-decoration: none;
     list-style-type: none;
-    margin: 0 1rem 0 0;
-    padding: 0;
+    margin: 0;
+    padding: 0 0 0 1rem;
 }
 
 /* ==================================
@@ -73,7 +73,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: lightgreen;
-    padding: 1rem; 
+    padding: 3rem; 
 }
 
 /* ==================================
@@ -120,11 +120,11 @@ body {
 }
 
 .navbar-icon::before {
-    bottom: 4px;
+    bottom: -1rem;
 }
 
 .navbar-icon::after {
-    top: 4px;
+    top: 1rem;
 }
 
 /* ==================================
