@@ -94,7 +94,7 @@ body {
 .navbar-btn-label {
     display: flex;
     flex-direction: column;
-    vertical-align: middle;
+    justify-content: center;
 }
 
 /* ==================================
@@ -104,7 +104,7 @@ body {
 .navbar-icon {
     display: block;
     width: 16px;
-    height: 2px;
+    height: 1px;
     background-color: black;
     position: relative;
     transition: 0.4s;
