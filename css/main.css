@@ -102,7 +102,7 @@ body {
 .navbar-icon {
     display: block;
     width: 1.75em;
-    height: 0.05em;
+    height: 0.2em;
     background-color: black;
     position: relative;
     transition: all linear 0.4s;
@@ -416,7 +416,7 @@ body {
    orientation: landscape
    ================================== */
 
-   @media (orientation: landscape) {
+   @media (orientation: landscape) and (max-width: 80em) {
 
     /* ==================================
        body-header
