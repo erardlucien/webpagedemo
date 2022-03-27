@@ -90,6 +90,7 @@ body {
    ================================== */
 
 .navbar-btn-label {
+    display: block;
     margin: 0.4rem 0 0 0;
 }
 
@@ -100,8 +101,8 @@ body {
 
 .navbar-icon {
     display: block;
-    width: 8vw;
-    height: 2px;
+    width: 1.75em;
+    height: 0.1em;
     background-color: black;
     position: relative;
     transition: all linear 0.4s;
