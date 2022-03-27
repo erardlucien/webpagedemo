@@ -102,7 +102,7 @@ body {
 .navbar-icon {
     display: block;
     width: 5vw;
-    height: 0.1vh;
+    height: 1%;
     background-color: black;
     position: relative;
     transition: all linear 0.4s;
