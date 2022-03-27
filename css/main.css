@@ -416,7 +416,7 @@ body {
    orientation: landscape
    ================================== */
 
-   @media (orientation: landscape) and (max-width: 80em) {
+   @media (orientation: landscape) and (max-width: 79em) {
 
     /* ==================================
        body
