@@ -101,8 +101,8 @@ body {
 
 .navbar-icon {
     display: block;
-    width: 2em;
-    height: 0.1em;
+    width: 1em;
+    height: 1px;
     background-color: black;
     position: relative;
     transition: all linear 0.4s;
