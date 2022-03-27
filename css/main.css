@@ -102,7 +102,7 @@ body {
 .navbar-icon {
     display: block;
     width: 5vw;
-    height: 0.09vh;
+    height: 0.1vh;
     background-color: black;
     position: relative;
     transition: all linear 0.4s;
@@ -113,18 +113,18 @@ body {
     content:'';
     display: block;
     width: 5vw;
-    height: 0.09vh;
+    height: 0.1vh;
     background-color: black;
     position: absolute;
     transition: all linear 0.4s;
 }
 
 .navbar-icon::before {
-    top: -0.05em;
+    top: -0.4em;
 }
 
 .navbar-icon::after {
-    top: 0.05em;
+    top: 0.4em;
 }
 
 /* ==================================
