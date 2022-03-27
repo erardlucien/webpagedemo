@@ -73,7 +73,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: lightgreen;
-    padding: 1em 0;  
+    padding: 1rem 0;  
 }
 
 /* ==================================
@@ -91,7 +91,7 @@ body {
    ================================== */
 
 .navbar-btn-label {
-    margin: 0.2em 0 0 0;
+    margin: 1rem 0 0 0;
 }
 
 
