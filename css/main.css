@@ -102,7 +102,7 @@ body {
 .navbar-icon {
     display: block;
     width: 2em;
-    height: 1px;
+    height: 0.0625em;
     background-color: black;
     position: relative;
     transition: all linear 0.4s;
@@ -419,6 +419,15 @@ body {
    @media (orientation: landscape) and (max-width: 80em) {
 
     /* ==================================
+       body
+       ================================== */
+    
+    .body {
+        display: block;
+        text-align: center;
+    }
+
+    /* ==================================
        body-header
        ================================== */
     
@@ -452,6 +461,15 @@ body {
         justify-content: center;
     }
 
+    
+    /* ==================================
+       navbar-link
+       ================================== */
+
+    .navbar-item:nth-child(3) {
+        display: block;
+    }
+
     /* ==================================
        navbar-link
        ================================== */
@@ -466,8 +484,8 @@ body {
 
     .body-main {
         display: block;
-        float: left;
-        width: 65%;
+        float: none;
+        width: auto;
         clear: none;
         padding: 0 1rem 0 2rem;
         height: 190vh; 
@@ -479,8 +497,8 @@ body {
 
     .aside {
         display: block;
-        margin: 0 0 0 65%;
-        width: 35%;
+        margin: 0;
+        width: auto;
         padding: 0 2rem;
         border-top: none;
         height: 190vh;
