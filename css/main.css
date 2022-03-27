@@ -91,7 +91,7 @@ body {
    ================================== */
 
 .navbar-btn-label {
-    margin: 0.8rem 0 0 0;
+    margin: 0.4rem 0 0 0;
 }
 
 
@@ -112,19 +112,19 @@ body {
 .navbar-icon::after {
     content:'';
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 16px;
+    height: 1px;
     background-color: black;
     position: absolute;
     transition: 0.4s;
 }
 
 .navbar-icon::before {
-    top: -2px;
+    top: -4px;
 }
 
 .navbar-icon::after {
-    top: 2px;
+    top: 4px;
 }
 
 /* ==================================
