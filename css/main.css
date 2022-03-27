@@ -9,7 +9,6 @@
   
 html {
     box-sizing: border-box;
-    font-size: 100%;
 }
 
 /* ==================================
@@ -17,7 +16,7 @@ html {
    ================================== */
 
 body {
-    font-size: 0.99rem;
+    font-size: 16px;
 }
 
 /* ==================================
@@ -101,8 +100,8 @@ body {
 
 .navbar-icon {
     display: block;
-    width: 6vw;
-    height: 0.1vh;
+    width: 8vw;
+    height: 0.25em;
     background-color: black;
     position: relative;
     transition: all linear 0.4s;
@@ -120,11 +119,11 @@ body {
 }
 
 .navbar-icon::before {
-    top: -1vh;
+    top: -1em;
 }
 
 .navbar-icon::after {
-    top: 1vh;
+    top: 1em;
 }
 
 /* ==================================
