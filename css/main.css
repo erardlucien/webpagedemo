@@ -101,7 +101,7 @@ body {
 
 .navbar-icon {
     display: block;
-    width: 5vw;
+    width: 6vw;
     height: 0.1vh;
     background-color: black;
     position: relative;
@@ -120,11 +120,11 @@ body {
 }
 
 .navbar-icon::before {
-    top: -4px;
+    top: -1vh;
 }
 
 .navbar-icon::after {
-    top: 4px;
+    top: 1vh;
 }
 
 /* ==================================
