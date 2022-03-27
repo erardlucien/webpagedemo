@@ -120,11 +120,11 @@ body {
 }
 
 .navbar-icon::before {
-    bottom: 1rem;
+    top: -0.5rem;
 }
 
 .navbar-icon::after {
-    top: 1rem;
+    top: 0.5rem;
 }
 
 /* ==================================
