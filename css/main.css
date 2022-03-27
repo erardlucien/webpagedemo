@@ -73,7 +73,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: lightgreen;
-    padding: 3rem; 
+    padding: 1rem; 
 }
 
 /* ==================================
@@ -120,7 +120,7 @@ body {
 }
 
 .navbar-icon::before {
-    bottom: -1rem;
+    bottom: 1rem;
 }
 
 .navbar-icon::after {
