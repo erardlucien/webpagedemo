@@ -88,16 +88,6 @@ body {
 
 
 /* ==================================
-    navbar-btn-label
-   ================================== */
-
-.navbar-btn-label {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* ==================================
    .navbar-icon
    ================================== */
 
