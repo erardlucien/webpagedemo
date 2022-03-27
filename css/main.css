@@ -192,7 +192,7 @@ body {
    ================================== */
 
 .article {
-    padding: 3vh 0;
+    padding: 3vh 1.5em;
     height: 30vh;
 }
 
@@ -202,6 +202,7 @@ body {
 
 .aside {
     height: 50vh;
+    padding: 1.5em;
     background-color: hsla(120, 73%, 75%, 0.432);
 }
 
