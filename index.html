@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="top">
+<html lang="en" >
     <head>
         <meta charset="UTF-8">
         <title>My Page</title>
@@ -7,7 +7,9 @@
         <link rel="stylesheet" href="css/main.css" type="text/css">
     </head>
     <body class="body"> 
-        <input title="navbar-btn" type="checkbox" class="navbar-btn" id="navbar-btn">
+        <div class="content-wrapper">
+            <div class="content">
+                <input title="navbar-btn" type="checkbox" class="navbar-btn" id="navbar-btn">
         <header class="body-header">
             <a class="logo" href="#">MyLOGO</a>
             <label for="navbar-btn" class="navbar-btn-label">
@@ -63,6 +65,7 @@
                 E-mail: erardlaurent1@gmail.com
             </address>
         </footer>
+            </div>
             <nav class="navbar" id="navbar">
                 <ul class="navbar-menu">
                     <li class="navbar-item"><a href="#articles" class="navbar-link">Articles</a></li>
@@ -71,7 +74,8 @@
                     <li class="navbar-item"><a href="#contact" class="navbar-link">Contact</a></li>
                 </ul>
             </nav>
-            <button class="up-button" id="up-button" onclick="topFunction()">^</a>
+            <button class="up-button" id="up-button" onclick="topFunction()"><span>^</span></a>
+        </div>
         <script>
             const links = document.querySelectorAll("body a");
 
@@ -101,10 +105,10 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 20 && document.body.scrollTop < 60 || document.documentElement.scrollTop > 20
   && document.documentElement.scrollTop < 60) {
-    mybutton.style.display = "block";
+    mybutton.style.display = "flex";
   } else if(document.body.scrollTop >= 60 || document.documentElement.scrollTop >= 60) {
+    mybutton.style.display = "flex";
     mynav.style.display = "block";
-    mybutton.style.display = "block";
     for(let index = 0; index < 4; index++) {
         document.getElementsByClassName("navbar-link")[index].style.visibility = "hidden";
     }
