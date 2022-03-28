@@ -271,7 +271,8 @@ body {
 
    .up-button {
        display: none;
-       flex-direction: column;
+       position: relative;
+       flex-direction: row;
        color: white;
        cursor: pointer;
        bottom: 20vh;
@@ -285,9 +286,14 @@ body {
        border-radius: 100%;
        background: gold;
        opacity: 0.3;
-       text-align: calc(50%, 50%);
        justify-content: center;
-       font-size: 40px;
+       vertical-align: middle;
+   }
+
+   .up-button span {
+       font-size: 70px;
+       position: absolute;
+       top: -0.7rem;
    }
 
 /* ==================================
