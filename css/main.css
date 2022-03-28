@@ -141,7 +141,7 @@ body {
 .navbar-icon {
     display: block;
     width: 2em;
-    height: 0.0625em;
+    height: 0.1em;
     background-color: black;
     position: relative;
     transition: all linear 0.4s;
