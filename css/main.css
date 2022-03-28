@@ -17,7 +17,6 @@ html {
 
 body {
     font-size: 16px;
-    background-color: hsla(0, 23%, 45%, 1);
 }
 
 /* ==================================
@@ -292,8 +291,10 @@ body {
 .body-footer {
     display: flex;
     justify-content: center;
+    bottom: 0;
     padding: 2em;
     width: 100%;
+    height: 20vh;
     background-color: hsla(0, 23%, 45%, 0.514);
 }
 
@@ -405,6 +406,7 @@ body {
         border-top: none;
         height: 180vh;
     }
+
 }
 
 /* ==================================
