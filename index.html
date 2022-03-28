@@ -55,7 +55,7 @@
             </div>
         </main>
         <aside class="aside" id="aboutus">
-            <p>You don’t have to judge me.</p>
+            <p>You don't have to judge me.</p>
         </aside>
         <footer class="body-footer" id="contact">
             <address>
@@ -106,13 +106,13 @@ function scrollFunction() {
     mynav.style.display = "block";
     mybutton.style.display = "block";
     for(let index = 0; index < 4; index++) {
-        document.getElementsByClassName("navbar-link")[index].style.display = "none";
+        document.getElementsByClassName("navbar-link")[index].style.visibility = "hidden";
     }
   } else {
     mynav.style.display = "none";
     mybutton.style.display = "none";
     for(let index = 0; index < 4; index++) {
-        document.getElementsByClassName("navbar-link")[index].style.display = "block";
+        document.getElementsByClassName("navbar-link")[index].style.visibility = "visible";
     }
   }
 }
