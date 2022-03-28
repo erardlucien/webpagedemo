@@ -140,8 +140,8 @@ body {
 
 .navbar-icon {
     display: block;
-    width: 2em;
-    height: 0.1em;
+    width: 2rem;
+    height: 0.07rem;
     background-color: black;
     position: relative;
     transition: all linear 0.4s;
@@ -159,11 +159,11 @@ body {
 }
 
 .navbar-icon::before {
-    top: -0.5em;
+    top: -0.5rem;
 }
 
 .navbar-icon::after {
-    top: 0.5em;
+    top: 0.5rem;
 }
 
 /* ==================================
