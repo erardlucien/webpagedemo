@@ -31,6 +31,45 @@ body {
 }
 
 /* ==================================
+   navbar-id
+   ================================== */
+
+#navbar {
+    display: none;
+    position: fixed;
+    opacity: 0.5;
+    width: 100%;
+    height: auto;
+    z-index: 99;
+    top: 10vh;
+    left: 0;
+}
+
+#navbar:hover {
+    opacity: 1;
+}
+
+#navbar .navbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#navbar .navbar-link:hover {
+    color: white;
+    text-transform: uppercase;
+    border-radius: 0;
+    background: transparent;
+    border: 0;
+    z-index: 99;
+}
+
+#navbar .navbar-link:hover::before {
+   display: none;
+}
+
+/* ==================================
    navbar-btn
    ================================== */
 
@@ -102,7 +141,7 @@ body {
 .navbar-icon {
     display: block;
     width: 2em;
-    height: 0.2em;
+    height: 0.0625em;
     background-color: black;
     position: relative;
     transition: all linear 0.4s;
@@ -215,28 +254,25 @@ body {
 }
 
 /* ==================================
-   up
+   up-button
    ================================== */
 
-   .up {
-       position: absolute;
-       top: auto;
-       left: 75vw;
+   .up-button {
+       display: none;
+       color: white;
+       cursor: pointer;
+       bottom: 20vh;
+       right: 2vw;
+       border: none;
+       outline: none;
+       position: fixed;
        width: 60px;
        height: 60px;
+       z-index: 99;
        border-radius: 100%;
        background: gold;
-       opacity: 0.5;
+       opacity: 0.3;
        text-align: center;
-   }
-
-/* ==================================
-   up-icon
-   ================================== */
-
-   .up-icon {
-       color: white;
-       opacity: 0.9;
        font-size: 40px;
    }
 
@@ -274,6 +310,19 @@ body {
        ================================== */
 
     .navbar-btn-label {
+        display: none;
+    }
+
+   /* ==================================
+      navbar-id
+      ================================== */
+
+    #navbar .navbar-menu {
+        display: flex;
+        justify-content: center;
+    }
+
+    #navbar .navbar-item:nth-child(3) {
         display: none;
     }
     
@@ -446,6 +495,14 @@ body {
         float: none;
         justify-content: center;
         padding: 1.1em;
+    }
+
+    /* ==================================
+       navbar-id
+       ================================== */
+
+    #navbar .navbar-item:nth-child(3) {
+        display: block;
     }
     
     /* ==================================
