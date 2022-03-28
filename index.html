@@ -66,5 +66,23 @@
                 E-mail: erardlaurent1@gmail.com
             </address>
         </footer>
+        <script>
+            const links = document.querySelectorAll("body a");
+
+for (const link of links) {
+  link.addEventListener("click", clickHandler);
+}
+
+function clickHandler(e) {
+  e.preventDefault();
+  const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+
+  scroll({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+}
+        </script>
     </body>
 </html>
