@@ -17,6 +17,7 @@ html {
 
 body {
     font-size: 16px;
+    background-color: hsla(0, 23%, 45%, 1);
 }
 
 /* ==================================
@@ -28,38 +29,6 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-
-/* ==================================
-   navbar-id
-   ================================== */
-
-#navbar {
-    display: none;
-    position: fixed;
-    opacity: 0.5;
-    width: 100%;
-    height: auto;
-    z-index: 99;
-    top: 10vh;
-    left: 0;
-}
-
-#navbar:hover {
-    opacity: 1;
-}
-
-#navbar .navbar-link:hover {
-    color: white;
-    text-transform: uppercase;
-    border-radius: 0;
-    background: transparent;
-    border: 0;
-    z-index: 99;
-}
-
-#navbar .navbar-link:hover::before {
-   display: none;
 }
 
 /* ==================================
@@ -157,6 +126,38 @@ body {
 
 .navbar-icon::after {
     top: 0.5rem;
+}
+
+/* ==================================
+   navbar-id
+   ================================== */
+
+#navbar {
+    display: none;
+    position: fixed;
+    opacity: 0.5;
+    width: 100%;
+    height: auto;
+    z-index: 99;
+    top: 10vh;
+    left: 0;
+}
+
+#navbar:hover {
+    opacity: 1;
+}
+
+#navbar .navbar-link:hover {
+    color: white;
+    text-transform: uppercase;
+    border-radius: 0;
+    background: transparent;
+    border: 0;
+    z-index: 99;
+}
+
+#navbar .navbar-link:hover::before {
+   display: none;
 }
 
 /* ==================================
@@ -483,7 +484,7 @@ body {
    orientation: landscape
    ================================== */
 
-   @media (orientation: landscape) and (max-width: 79em) {
+@media (orientation: landscape) and (max-width: 79em) {
 
     /* ==================================
        body
