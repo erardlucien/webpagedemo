@@ -90,11 +90,12 @@ function clickHandler(e) {
   });
 }
 
-//Get the button:
+//Get the button and navbar
 let mybutton = document.getElementById("up-button");
 let mynav = document.getElementById("navbar");
 
-// When the user scrolls down 20px from the top of the document, show the button
+// When the user scrolls down 20px from the top of the document, show the button until the window reach 60px.
+// When the user scrolls down 60px from the top of the document, show the button and the second navbar
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
