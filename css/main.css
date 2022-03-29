@@ -341,7 +341,7 @@ body {
        background: gold;
        padding: 5px;
        font-size: 90px;
-       line-height: 0.75;
+       line-height: 0.375;
        text-align: center;
        opacity: 0.3;
    }
