@@ -105,10 +105,20 @@ for (const link of links) {
 function clickHandler(e) {
   e.preventDefault();
   const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+
+  scroll({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+
+/* ---------------experimental-------------------- 
+    const href = this.getAttribute("href");
  
- document.querySelector(href).scrollIntoView({
+   document.querySelector(href).scrollIntoView({
    behavior: "smooth"
- });
+   });
+  ------------------------------------------------- */
 }
 
 //Get the button and navbar
