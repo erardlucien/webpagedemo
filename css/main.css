@@ -271,7 +271,6 @@ body {
 
    .up-button {
        display: none;
-       position: relative;
        flex-direction: row;
        color: white;
        cursor: pointer;
@@ -292,8 +291,6 @@ body {
 
    .up-button span {
        font-size: 70px;
-       position: absolute;
-       top: -0.7rem;
    }
 
 /* ==================================
