@@ -279,11 +279,13 @@ body {
        outline: none;
        position: fixed;
        z-index: 99;
+       height: 60px;
+       width: 60px;
        border-radius: 50%;
        background: gold;
-       padding: 30px;
-       margin: 4px 2px;
+       padding: 5px;
        font-size: 50px;
+       line-height: 0;
        text-align: center;
        opacity: 0.3;
    }
