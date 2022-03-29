@@ -105,9 +105,9 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 20 && document.body.scrollTop < 60 || document.documentElement.scrollTop > 20
   && document.documentElement.scrollTop < 60) {
-    mybutton.style.display = "flex";
+    mybutton.style.display = "inline-block";
   } else if(document.body.scrollTop >= 60 || document.documentElement.scrollTop >= 60) {
-    mybutton.style.display = "flex";
+    mybutton.style.display = "inline-block";
     mynav.style.display = "block";
     for(let index = 0; index < 4; index++) {
         document.getElementsByClassName("navbar-link")[index].style.visibility = "hidden";

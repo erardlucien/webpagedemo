@@ -271,7 +271,6 @@ body {
 
    .up-button {
        display: none;
-       flex-direction: column;
        color: white;
        cursor: pointer;
        bottom: 20vh;
@@ -279,12 +278,13 @@ body {
        border: none;
        outline: none;
        position: fixed;
-       width: 60px;
-       height: 60px;
        z-index: 99;
-       border-radius: 100%;
+       border-radius: 50%;
        background: gold;
+       padding: 30px;
+       margin: 4px 2px;
        font-size: 50px;
+       text-align: center;
        opacity: 0.3;
    }
 
