@@ -271,7 +271,7 @@ body {
 
    .up-button {
        display: none;
-       flex-direction: row;
+       flex-direction: column;
        color: white;
        cursor: pointer;
        bottom: 20vh;
@@ -284,13 +284,8 @@ body {
        z-index: 99;
        border-radius: 100%;
        background: gold;
+       font-size: 50px;
        opacity: 0.3;
-       justify-content: center;
-       vertical-align: middle;
-   }
-
-   .up-button span {
-       font-size: 70px;
    }
 
 /* ==================================
@@ -326,7 +321,7 @@ body {
     .body-header {
         display: block;
         float: left;
-        height: 4vh;
+        height: 5vh;
         padding: 1.2em;
     }
 
@@ -360,7 +355,15 @@ body {
         background-color: lightgreen;
         justify-content: right;
         padding: 0.5em 0;
-        height: 4vh;
+        height: 5vh;
+    }
+
+    .navbar:nth-child(1) {
+        padding: 1.2em;
+    }
+
+    .navbar:nth-child(1) .navbar-link {
+        padding: 0;
     }
 
      /* ==================================
