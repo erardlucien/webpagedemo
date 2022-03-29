@@ -315,7 +315,6 @@ body {
    ================================== */
 
 .aside {
-    display: block;
     position: relative;
     height: 50vh;
     padding: 1.5em;
@@ -367,7 +366,7 @@ body {
        background: gold;
        padding: 5px;
        font-size: 90px;
-       line-height: 0.7;
+       line-height: 0.8;
        text-align: center;
        opacity: 0.3;
    }
