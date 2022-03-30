@@ -263,10 +263,10 @@ body {
     transform: scaleY(100%);
 }
 
-   some childlish game.
 .body-main .article {
     position: relative;
 }
+
 
 .body-main .article::before {
     content: 'I got you!';
@@ -291,6 +291,7 @@ body {
 .body-main .article:hover::before {
     transform: scaleY(100%);
 }
+
 
    ============================================================================ */
 
@@ -585,15 +586,15 @@ body {
         display: block;
         width: 65%;
         clear: none;
-        padding: 0 1rem 0 2rem;
         height: 120vh; 
     }
 
     /* ==================================
-       aside
+       article
        ================================== */
 
     .article {
+        padding: 0 1rem 0 2rem;
         height: 15vh;
     }
 
