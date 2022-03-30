@@ -336,7 +336,7 @@ body {
     top: 0;
     left: 0;
     font-weight: bolder;
-    font-size: 2rem;
+    font-size: 1.2rem;
     transform-origin: left;
     transform: scaleX(0%);
     color: white;
@@ -610,6 +610,10 @@ body {
         border-top: none;
         height: 120vh;
         clear: right;
+    }
+
+    .aside::before  {
+        font-size: 2rem;
     }
 
     /* ==================================
