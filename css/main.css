@@ -216,11 +216,13 @@ body {
     opacity: 0.5;
 }
 
-.navbar-link:hover::before {
+.navbar-link:hover::before
+.navbar-link:active::before {
     transform: scaleX(100%);
 }
 
-.navbar-link:hover {
+.navbar-link:hover
+.navbar-link:active {
     color: white;
     background-color: aqua;
     border-bottom: 2px solid black;
@@ -348,7 +350,7 @@ body {
     z-index: -1;
 }
 
-.aside:hover::before {
+.aside:active::before {
     transform: scaleX(100%);
 }
 
@@ -511,6 +513,10 @@ body {
         padding: 0 2rem;
         border-top: none;
         height: 207vh;
+    }
+
+    .aside:hover::before {
+        transform: scaleX(100%);
     }
 
     /* ==================================
