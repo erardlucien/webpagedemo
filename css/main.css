@@ -195,7 +195,6 @@ body {
     width: 6em;
     padding: 0.5em;
     border-radius: 50%;
-    transition: 0.4s;
 }
 
 .navbar-link::before {
@@ -211,17 +210,15 @@ body {
     transform: scaleX(0%);
     border-radius: 50%;
     background: gold;
-    transition: all linear 0.5s;
+    transition: all 400ms linear 0.5s;
     transition-delay: 0.4s;
     opacity: 0.5;
 }
 
-.navbar-link:hover::before
 .navbar-link:active::before {
     transform: scaleX(100%);
 }
 
-.navbar-link:hover
 .navbar-link:active {
     color: white;
     background-color: aqua;
@@ -479,6 +476,16 @@ body {
 
     .navbar-link {
         text-align: center;
+    }
+
+    .navbar-link:hover::before {
+        transform: scaleX(100%);
+    }
+
+    .navbar-link:hover {
+        color: white;
+        background-color: aqua;
+        border-bottom: 2px solid black;
     }
 
     /* ==================================
