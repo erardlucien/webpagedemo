@@ -347,7 +347,7 @@ body {
     z-index: -1;
 }
 
-.aside:active::before {
+.aside:hover::before {
     transform: scaleX(100%);
 }
 
@@ -520,10 +520,6 @@ body {
         padding: 0 2rem;
         border-top: none;
         height: 207vh;
-    }
-
-    .aside:hover::before {
-        transform: scaleX(100%);
     }
 
     /* ==================================
