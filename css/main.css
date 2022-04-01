@@ -143,23 +143,22 @@ body {
     left: 0;
 }
 
-#navbar:hover,
 #navbar:active {
     opacity: 1;
     transition: all 14ms linear 0ms;
 }
 
-#navbar .navbar-link:hover,
 #navbar .navbar-link:active {
     color: white;
     text-transform: uppercase;
     background-color: aquamarine;
     border-radius: 0;
     /* property name | duration | timing function | delay */
-    transition: all 4ms ease-in-out 0ms;
+    transition: all 0ms ease-in-out 0ms;
     border: 0;
 }
 
+#navbar .navbar-link:active::before,
 #navbar .navbar-link:hover::before {
    display: none;
 }
@@ -217,12 +216,14 @@ body {
 
 .navbar-link:active::before {
     transform: scaleX(100%);
+    transition: all 0ms  linear 0ms;
 }
 
 .navbar-link:active {
     color: white;
     background-color: aqua;
     border-bottom: 2px solid black;
+    transition: all 0ms  linear 0ms;
 }
 
 /* ==================================

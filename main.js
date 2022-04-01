@@ -10,13 +10,6 @@
             navbar_links[2].addEventListener("click", reduceMe);
             navbar_links[6].addEventListener("click", increaseMe);
 
-            function showMe(event) {
-                event.preventDefault();
-                surprise.style.visibility = "visible";
-                surprise.style.transform ="scaleX(100%)";
-                surprise.style.transition = "all 800ms linear 4ms";
-            }
-
             function reduceMe(event) {
                 event.preventDefault();
                 aside.style.transform = "scaleX(80%)";
@@ -110,9 +103,7 @@ if(document.body.scrollTop >=  offsetTop[1]|| document.documentElement.scrollTop
     surprise.style.transform ="scaleX(0)";
     aside.style.backgroundColor = "hsla(120, 73%, 75%, 0.432)";
     aside.style.transition = "all 800ms linear 4ms";
-    surprise.style.transition = "all 800ms linear 4ms";
     myownway.style.transform = "scaleX(0)";
-    myownway.style.transition = "all 800ms linear 4ms";
 
     for(let index = 0; index < 4; index++) {
         document.getElementsByClassName("navbar-link")[index].style.visibility = "visible";
