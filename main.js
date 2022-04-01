@@ -82,17 +82,15 @@ window.onscroll = function() {scrollFunction()};
 const myownway = document.querySelector('.myownway');
 
 function scrollFunction() {
-  const href = navbar_links[2].getAttribute("href");
-  const offsetTop = document.querySelector(href).offsetTop;
+  let  href = [];
+  href.push(navbar_links[2].getAttribute("href"), navbar_links[0].getAttribute("href"));
+  let offsetTop = [];
+  offsetTop.push(document.querySelector(href[0]).offsetTop, document.querySelector(href[1]).offsetTop);
 
-  if (document.body.scrollTop > 20 && document.body.scrollTop < 60 || document.documentElement.scrollTop > 20
-  && document.documentElement.scrollTop < 60) {
-
-    mybutton.style.display = "inline-block";
-  } else if(document.body.scrollTop >= 60 || document.documentElement.scrollTop >= 60) {
-    mybutton.style.display = "inline-block";
+if(document.body.scrollTop >=  offsetTop[1]|| document.documentElement.scrollTop >= offsetTop[1]) {
+    mybutton.style.display = "block";
     mynav.style.display = "block";
-    if(document.body.scrollTop === offsetTop || document.documentElement.srollTop === offsetTop) {
+    if(document.body.scrollTop === offsetTop[0] || document.documentElement.srollTop === offsetTop[0]) {
         surprise.style.transform ="scaleX(100%)";
         aside.style.backgroundColor = "lightgreen";
         aside.style.transition = "all 800ms linear 4ms";
