@@ -90,7 +90,7 @@ function scrollFunction() {
 if(document.body.scrollTop >=  offsetTop[1]|| document.documentElement.scrollTop >= offsetTop[1]) {
     mybutton.style.display = "block";
     mynav.style.display = "block";
-    if(document.body.scrollTop === (offsetTop[0] + 20) || document.documentElement.srollTop === (offsetTop[0] + 20)) {
+    if(document.body.scrollTop === offsetTop[0] || document.documentElement.srollTop === offsetTop[0]) {
         surprise.style.transform ="scaleX(100%)";
         aside.style.backgroundColor = "lightgreen";
         aside.style.transition = "all 800ms linear 4ms";
