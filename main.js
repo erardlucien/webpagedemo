@@ -79,29 +79,49 @@ let mynav = document.getElementById("navbar");
 // When the user scrolls down 60px from the top of the document, show the button and the second navbar
 window.onscroll = function() {scrollFunction()};
 
+const myownway = document.querySelector('.myownway');
+
 function scrollFunction() {
   const href = navbar_links[2].getAttribute("href");
   const offsetTop = document.querySelector(href).offsetTop;
+
   if (document.body.scrollTop > 20 && document.body.scrollTop < 60 || document.documentElement.scrollTop > 20
   && document.documentElement.scrollTop < 60) {
+
     mybutton.style.display = "inline-block";
   } else if(document.body.scrollTop >= 60 || document.documentElement.scrollTop >= 60) {
     mybutton.style.display = "inline-block";
     mynav.style.display = "block";
     if(document.body.scrollTop === offsetTop || document.documentElement.srollTop === offsetTop) {
         surprise.style.transform ="scaleX(100%)";
+        aside.style.backgroundColor = "lightgreen";
+        aside.style.transition = "all 800ms linear 4ms";
         surprise.style.transition = "all 800ms linear 4ms";
+        myownway.style.transform = "scaleX(100%)";
+        myownway.style.transition = "all 800ms linear 4ms";
     }
+
     for(let index = 0; index < 4; index++) {
         document.getElementsByClassName("navbar-link")[index].style.visibility = "hidden";
     }
+
   } else {
+
     mynav.style.display = "none";
     mybutton.style.display = "none";
+    surprise.style.transform ="scaleX(0)";
+    aside.style.backgroundColor = "hsla(120, 73%, 75%, 0.432)";
+    aside.style.transition = "all 800ms linear 4ms";
+    surprise.style.transition = "all 800ms linear 4ms";
+    myownway.style.transform = "scaleX(0)";
+    myownway.style.transition = "all 800ms linear 4ms";
+
     for(let index = 0; index < 4; index++) {
         document.getElementsByClassName("navbar-link")[index].style.visibility = "visible";
     }
+
   }
+
 }
 
 // When the user clicks on the button, scroll to the top of the document
