@@ -215,12 +215,10 @@ body {
     opacity: 0.5;
 }
 
-.navbar-link:hover::before,
 .navbar-link:active::before {
     transform: scaleX(100%);
 }
 
-.navbar-link:hover,
 .navbar-link:active {
     color: white;
     background-color: aqua;
@@ -582,6 +580,25 @@ body {
         padding: 1vh;
         height: 5vh;
     }
+
+    /* ==================================
+       navbar-id
+       ================================== */
+
+    #navbar:hover {
+        opacity: 1;
+        transition: all 14ms linear 0ms;
+    }
+
+    #navbar .navbar-link:hover {
+        color: white;
+        text-transform: uppercase;
+        background-color: aquamarine;
+        border-radius: 0;
+        /* property name | duration | timing function | delay */
+        transition: all 4ms ease-in-out 0ms;
+        border: 0;
+    }
     
     /* ==================================
        navbar
@@ -603,6 +620,20 @@ body {
     
     .navbar-menu {
         display: block;
+    }
+
+    /* ==================================
+       navbar-link
+       ================================== */
+
+    .navbar-link:hover::before {
+        transform: scaleX(100%);
+    }
+
+   .navbar-link:hover {
+        color: white;
+        background-color: aqua;
+        border-bottom: 2px solid black;
     }
 
 
