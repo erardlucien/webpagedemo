@@ -334,7 +334,7 @@ body {
 }
 
 .aside:nth-child(1) p:nth-child(2) {
-    margin: 9rem 2rem 0 0;
+    margin: 6rem 2rem 0 0;
     transform-origin: center;
     transform: scaleX(0);
 }
