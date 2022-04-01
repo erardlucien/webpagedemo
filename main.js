@@ -1,0 +1,111 @@
+
+            // Select all the elements from the body with the class 'about-us'.
+            const about_us = document.querySelectorAll(".about-us");
+
+            // Select all the elements from the body with the class 'navbar-link'.
+            const navbar_links = document.getElementsByClassName("navbar-link");
+            const aside = document.getElementsByClassName("aside")[0];
+            const surprise = document.getElementsByClassName("aside")[1];
+
+            navbar_links[2].addEventListener("click", reduceMe);
+            navbar_links[6].addEventListener("click", increaseMe);
+
+            function showMe(event) {
+                event.preventDefault();
+                surprise.style.visibility = "visible";
+                surprise.style.transform ="scaleX(100%)";
+                surprise.style.transition = "all 800ms linear 4ms";
+            }
+
+            function reduceMe(event) {
+                event.preventDefault();
+                aside.style.transform = "scaleX(80%)";
+                aside.style.transition = "all 800ms linear 4ms";
+            }
+
+            function increaseMe(event) {
+                event.preventDefault();
+                aside.style.transform = "scaleX(100%)";
+                aside.style.transition = "all 800ms linear 4ms";
+            }
+
+
+for (const navbar_link of navbar_links) {
+    if(navbar_link === about_us[0] || navbar_link === about_us[1]) {
+        navbar_link.addEventListener("click", clickHandlerforAbout);
+    } else {
+        navbar_link.addEventListener("click", clickHandler);
+    }
+}
+
+function clickHandler(event) {
+
+  event.preventDefault();
+  const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+  scroll({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+
+}
+
+function clickHandlerforAbout(event) {
+
+    event.preventDefault();
+
+    scroll({
+        top: document.body.getElementsByClassName("about")[0].offsetTop,
+        behavior: "smooth"
+    });
+
+}
+  
+
+/* --------------------------experimental---------------------------------------
+    const href = this.getAttribute("href");
+    e.preventDefault();
+ 
+   document.querySelector(href).scrollIntoView({
+   behavior: "smooth"
+   });
+  --------------------------experimental--------------------------------------- */
+
+//Get the button and navbar
+let mybutton = document.getElementById("up-button");
+let mynav = document.getElementById("navbar");
+
+// When the user scrolls down 20px from the top of the document, show the button until the window reach 60px.
+// When the user scrolls down 60px from the top of the document, show the button and the second navbar
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  const href = navbar_links[2].getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+  if (document.body.scrollTop > 20 && document.body.scrollTop < 60 || document.documentElement.scrollTop > 20
+  && document.documentElement.scrollTop < 60) {
+    mybutton.style.display = "inline-block";
+  } else if(document.body.scrollTop >= 60 || document.documentElement.scrollTop >= 60) {
+    mybutton.style.display = "inline-block";
+    mynav.style.display = "block";
+    if(document.body.scrollTop === offsetTop || document.documentElement.srollTop === offsetTop) {
+        surprise.style.transform ="scaleX(100%)";
+        surprise.style.transition = "all 800ms linear 4ms";
+    }
+    for(let index = 0; index < 4; index++) {
+        document.getElementsByClassName("navbar-link")[index].style.visibility = "hidden";
+    }
+  } else {
+    mynav.style.display = "none";
+    mybutton.style.display = "none";
+    for(let index = 0; index < 4; index++) {
+        document.getElementsByClassName("navbar-link")[index].style.visibility = "visible";
+    }
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 

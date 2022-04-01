@@ -72,7 +72,7 @@ body {
 .body-header {
     display: flex;
     justify-content: space-between;
-    background-color: lightgreen;
+    background-color: lightskyblue;
     padding: 2rem; 
 }
 
@@ -312,22 +312,27 @@ body {
 }
 
 /* ==================================
+   about
+   ================================== */
+
+   .about {
+       position: relative;
+   }
+/* ==================================
    aside
    ================================== */
 
 .aside {
-    position: relative;
     height: 50vh;
     padding: 1.5em;
     background-color: hsla(120, 73%, 75%, 0.432);
-    z-index: 1;
 }
 
 .aside p {
     display: block;
     padding: 2rem;
 }
-
+/*
 .aside::before {
     content: 'love is in the atmosphere.I died for for you my baby. I die for love.';
     display: block;
@@ -347,8 +352,32 @@ body {
     z-index: -1;
 }
 
+
 .aside:hover::before {
     transform: scaleX(100%);
+}
+
+*/
+.aside:nth-child(2) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: lightgreen;
+    transform-origin: left;
+    transform: scaleX(0);
+    z-index: -1;
+}
+
+.aside:nth-child(2):hover::before {
+    display:none;
+}
+
+.aside:nth-child(2) p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.3rem;
+    margin: 2rem 0 0 0;
+    padding: 1.5rem;
 }
 
 /* ==================================
@@ -439,7 +468,7 @@ body {
     
     .navbar {
         display: flex;
-        background-color: lightgreen;
+        background-color: lightskyblue;
         justify-content: right;
         padding: 0.5em 0;
         height: 5vh;
