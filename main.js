@@ -1,6 +1,9 @@
 
             // Select all the elements from the body with the class 'about-us'.
             const about_us = document.querySelectorAll(".about-us");
+            const logo = document.querySelector(".logo");
+
+            logo.addEventListener("click", clickHandler);
 
             // Select all the elements from the body with the class 'navbar-link'.
             const navbar_links = document.getElementsByClassName("navbar-link");
@@ -70,6 +73,8 @@ function clickHandlerforAbout(event) {
 let mybutton = document.getElementById("up-button");
 let mynav = document.getElementById("navbar");
 
+let mediaQuery = window.matchMedia('(min-width: 20em)');
+
 // When the user scrolls down 20px from the top of the document, show the button until the window reach 60px.
 // When the user scrolls down 60px from the top of the document, show the button and the second navbar
 window.onscroll = function() {scrollFunction()};
@@ -81,8 +86,8 @@ function scrollFunction() {
   href.push(navbar_links[2].getAttribute("href"), navbar_links[0].getAttribute("href"));
   let offsetTop = [];
   offsetTop.push(document.querySelector(href[0]).offsetTop, document.querySelector(href[1]).offsetTop);
-
-if(document.body.scrollTop >=  offsetTop[1]|| document.documentElement.scrollTop >= offsetTop[1]) {
+if(mediaQuery.matches) {
+  if(document.body.scrollTop >=  offsetTop[1]|| document.documentElement.scrollTop >= offsetTop[1]) {
     mybutton.style.display = "block";
     mynav.style.display = "block";
     if(document.body.scrollTop === offsetTop[0] || document.documentElement.srollTop === offsetTop[0]) {
@@ -113,6 +118,8 @@ if(document.body.scrollTop >=  offsetTop[1]|| document.documentElement.scrollTop
     }
 
   }
+
+ }
 
 }
 
