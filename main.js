@@ -2,6 +2,9 @@
             // Select all the elements from the body with the class 'about-us'.
             const about_us = document.querySelectorAll(".about-us");
             const logo = document.querySelector(".logo");
+            const first_navigation = document.querySelector(".navbar");
+            // navigation_state tell if the first navbar is closed or opened.
+            let navigation_state = false;
 
             logo.addEventListener("click", clickHandler);
 
@@ -11,8 +14,8 @@
             const surprise = document.getElementsByClassName("about-content")[1];
             const background_aboutus = document.getElementById("background-aboutus");
 
-            navbar_links[2].addEventListener("click", reduceMe);
-            navbar_links[6].addEventListener("click", increaseMe);
+            about_us[0].addEventListener("click", reduceMe);
+            about_us[1].addEventListener("click", increaseMe);
 
             function reduceMe(event) {
                 event.preventDefault();
@@ -26,6 +29,26 @@
                 aboutus.style.transition = "all 800ms linear 4ms";
             }
 
+            function showMenu(event) {
+              event.preventDefault();
+              if(navigation_state === false) {
+                first_navigation.style.display = "block";
+                navigation_state = true;
+              } else {
+                first_navigation.style.display = "none";
+                navigation_state = false;
+              }
+            }
+
+            function closeMenu(event) {
+              event.preventDefault();
+              first_navigation.style.display = "none";
+              navigation_state = false;
+            }
+
+for(let index = 0; index < 4; index++) {
+  navbar_links[index].addEventListener("click", closeMenu);
+}
 
 for (const navbar_link of navbar_links) {
   
@@ -74,6 +97,10 @@ let mybutton = document.getElementById("up-button");
 let mynav = document.getElementById("navbar");
 
 let mediaQuery = window.matchMedia('(min-width: 20em)');
+
+if(!mediaQuery.matches) {
+  logo.addEventListener("click", showMenu);
+}
 
 // When the user scrolls down 20px from the top of the document, show the button until the window reach 60px.
 // When the user scrolls down 60px from the top of the document, show the button and the second navbar
