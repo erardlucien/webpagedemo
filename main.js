@@ -46,17 +46,12 @@
               navigation_state = false;
             }
 
-for(let index = 0; index < 4; index++) {
-  navbar_links[index].addEventListener("click", closeMenu);
-}
-
 for (const navbar_link of navbar_links) {
-  
     if(navbar_link === about_us[0] || navbar_link === about_us[1]) {
         navbar_link.addEventListener("click", clickHandlerforAbout);
     } else {
         navbar_link.addEventListener("click", clickHandler);
-    }
+    } 
 }
 
 function clickHandler(event) {
