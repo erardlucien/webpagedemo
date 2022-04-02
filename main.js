@@ -4,26 +4,28 @@
 
             // Select all the elements from the body with the class 'navbar-link'.
             const navbar_links = document.getElementsByClassName("navbar-link");
-            const aside = document.getElementsByClassName("aside")[0];
-            const surprise = document.getElementsByClassName("aside")[1];
+            const aboutus = document.getElementsByClassName("about-content")[0];
+            const surprise = document.getElementsByClassName("about-content")[1];
+            const background_aboutus = document.getElementById("background-aboutus");
 
             navbar_links[2].addEventListener("click", reduceMe);
             navbar_links[6].addEventListener("click", increaseMe);
 
             function reduceMe(event) {
                 event.preventDefault();
-                aside.style.transform = "scaleX(80%)";
-                aside.style.transition = "all 800ms linear 4ms";
+                aboutus.style.transform = "scaleX(80%)";
+                aboutus.style.transition = "all 800ms linear 4ms";
             }
 
             function increaseMe(event) {
                 event.preventDefault();
-                aside.style.transform = "scaleX(100%)";
-                aside.style.transition = "all 800ms linear 4ms";
+                aboutus.style.transform = "scaleX(100%)";
+                aboutus.style.transition = "all 800ms linear 4ms";
             }
 
 
 for (const navbar_link of navbar_links) {
+  
     if(navbar_link === about_us[0] || navbar_link === about_us[1]) {
         navbar_link.addEventListener("click", clickHandlerforAbout);
     } else {
@@ -85,11 +87,11 @@ if(document.body.scrollTop >=  offsetTop[1]|| document.documentElement.scrollTop
     mynav.style.display = "block";
     if(document.body.scrollTop === offsetTop[0] || document.documentElement.srollTop === offsetTop[0]) {
         surprise.style.transform ="scaleX(100%)";
-        aside.style.backgroundColor = "lightgreen";
-        aside.style.transition = "all 800ms linear 4ms";
+        aboutus.style.transition = "all 800ms linear 4ms";
         surprise.style.transition = "all 800ms linear 4ms";
         myownway.style.transform = "scaleX(100%)";
         myownway.style.transition = "all 800ms linear 4ms";
+        background_aboutus.setAttribute("style", "transform:scaleX(100%)");
     }
 
     for(let index = 0; index < 4; index++) {
@@ -101,9 +103,10 @@ if(document.body.scrollTop >=  offsetTop[1]|| document.documentElement.scrollTop
     mynav.style.display = "none";
     mybutton.style.display = "none";
     surprise.style.transform ="scaleX(0)";
-    aside.style.backgroundColor = "hsla(120, 73%, 75%, 0.432)";
-    aside.style.transition = "all 800ms linear 4ms";
+    aboutus.style.backgroundColor = "hsla(120, 73%, 75%, 0.432)";
+    aboutus.style.transition = "all 800ms linear 4ms";
     myownway.style.transform = "scaleX(0)";
+    background_aboutus.setAttribute("style", "transform:scaleX(0)");
 
     for(let index = 0; index < 4; index++) {
         document.getElementsByClassName("navbar-link")[index].style.visibility = "visible";
