@@ -53,7 +53,7 @@ body {
 }
 
 .content .navbar {
-    display: none;
+   display: none;
 }
 
 /* ==================================
@@ -101,6 +101,7 @@ body {
     padding: 0.5rem;
     background-color: hsla(160, 100%, 75%, 0.589);
 }
+
 
 /* ==================================
    navbar-menu

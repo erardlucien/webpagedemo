@@ -46,14 +46,6 @@
               navigation_state = false;
             }
 
-for (const navbar_link of navbar_links) {
-    if(navbar_link === about_us[0] || navbar_link === about_us[1]) {
-        navbar_link.addEventListener("click", clickHandlerforAbout);
-    } else {
-        navbar_link.addEventListener("click", clickHandler);
-    } 
-}
-
 function clickHandler(event) {
 
   event.preventDefault();
@@ -95,6 +87,22 @@ let mediaQuery = window.matchMedia('(min-width: 20em)');
 
 if(!mediaQuery.matches) {
   logo.addEventListener("click", showMenu);
+}
+
+for(let index = 0; index < 4; index++) {
+  // if the display width is smaller than or equal to 19em = 304pixel,
+  // then you can close de navbar, when the link is clicked.
+  if(!mediaQuery.matches) {
+    navbar_links[index].addEventListener("click", closeMenu);
+  }
+}
+
+for (const navbar_link of navbar_links) {
+    if(navbar_link === about_us[0] || navbar_link === about_us[1]) {
+        navbar_link.addEventListener("click", clickHandlerforAbout);
+    } else {
+        navbar_link.addEventListener("click", clickHandler);
+    } 
 }
 
 // When the user scrolls down 20px from the top of the document, show the button until the window reach 60px.
