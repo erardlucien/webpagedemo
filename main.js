@@ -31,10 +31,12 @@
 
             function showMenu(event) {
               event.preventDefault();
+              // when the navigation_state is false, open the menu.
               if(navigation_state === false) {
                 first_navigation.style.display = "block";
                 navigation_state = true;
               } else {
+                // when the navigation_state is true, close the menu.
                 first_navigation.style.display = "none";
                 navigation_state = false;
               }
@@ -105,11 +107,10 @@ for (const navbar_link of navbar_links) {
     } 
 }
 
-// When the user scrolls down 20px from the top of the document, show the button until the window reach 60px.
-// When the user scrolls down 60px from the top of the document, show the button and the second navbar
 window.onscroll = function() {scrollFunction()};
 
 const myownway = document.querySelector('.myownway');
+let state = true; 
 
 function scrollFunction() {
   let  href = [];
@@ -120,13 +121,16 @@ if(mediaQuery.matches) {
   if(document.body.scrollTop >=  offsetTop[1]|| document.documentElement.scrollTop >= offsetTop[1]) {
     mybutton.style.display = "block";
     mynav.style.display = "block";
-    if(document.body.scrollTop === offsetTop[0] || document.documentElement.srollTop === offsetTop[0]) {
+    if(document.body.scrollTop === offsetTop[0] && state === true || document.documentElement.srollTop === offsetTop[0] && state === true) {
         surprise.style.transform ="scaleX(100%)";
-        aboutus.style.transition = "all 800ms linear 4ms";
-        surprise.style.transition = "all 800ms linear 4ms";
         myownway.style.transform = "scaleX(100%)";
-        myownway.style.transition = "all 800ms linear 4ms";
         background_aboutus.setAttribute("style", "transform:scaleX(100%)");
+        state = false;
+    } else {
+        surprise.style.transform ="scaleX(0)";
+        myownway.style.transform = "scaleX(0)";
+        background_aboutus.setAttribute("style", "transform:scaleX(0)");
+        state = true;
     }
 
     for(let index = 0; index < 4; index++) {
