@@ -129,12 +129,10 @@ if(mediaQuery.matches) {
         surprise.style.transform ="scaleX(100%)";
         myownway.style.transform = "scaleX(100%)";
         background_aboutus.setAttribute("style", "transform:scaleX(100%)");
-        about_us_state = false;
     } else {
         surprise.style.transform ="scaleX(0)";
         myownway.style.transform = "scaleX(0)";
         background_aboutus.setAttribute("style", "transform:scaleX(0)");
-        about_us_state = true;
     }
 
 
