@@ -1,57 +1,67 @@
 
-            // Select all the elements from the body with the class 'about-us'.
-            const about_us = document.getElementsByClassName("about-us");
-            const logo = document.querySelector(".logo");
-            const first_navigation = document.querySelector(".navbar");
-            // navigation_state tell if the first navbar is closed or opened.
-            let navigation_state = false;
+// Select all the elements from the body with the class 'about-us'.
+const about_us = document.getElementsByClassName("about-us");
+const logo = document.querySelector(".logo");
+const first_navigation = document.querySelector(".navbar");
+const myownway = document.querySelector('.myownway');
+// navigation_state tell if the first navbar is closed or opened.
+let navigation_state = false;
 
-            let about_us_state = false; 
+// Select all the elements from the body with the class 'navbar-link'.
+const navbar_links = document.getElementsByClassName("navbar-link");
+const aboutus = document.getElementsByClassName("about-content")[0];
+const surprise = document.getElementsByClassName("about-content")[1];
+const background_aboutus = document.getElementById("background-aboutus");
 
-            
+function reduceMe(event) {
+  event.preventDefault();
+  aboutus.style.transform = "scaleX(80%)";
+  aboutus.style.transition = "all 800ms linear 4ms";
+}
 
-            // Select all the elements from the body with the class 'navbar-link'.
-            const navbar_links = document.getElementsByClassName("navbar-link");
-            const aboutus = document.getElementsByClassName("about-content")[0];
-            const surprise = document.getElementsByClassName("about-content")[1];
-            const background_aboutus = document.getElementById("background-aboutus");
+function increaseMe(event) {
+  event.preventDefault();
+  aboutus.style.transform = "scaleX(100%)";
+  aboutus.style.transition = "all 800ms linear 4ms";
+}
 
-            function reduceMe(event) {
-                event.preventDefault();
-                aboutus.style.transform = "scaleX(80%)";
-                aboutus.style.transition = "all 800ms linear 4ms";
-            }
+function showMenu(event) {
+  event.preventDefault();
+  // when the navigation_state is false, open the menu.
+  if (navigation_state === false) {
+    first_navigation.style.display = "block";
+    navigation_state = true;
+  } else {
+    // when the navigation_state is true, close the menu.
+    first_navigation.style.display = "none";
+    navigation_state = false;
+  }
+}
 
-            function increaseMe(event) {
-                event.preventDefault();
-                aboutus.style.transform = "scaleX(100%)";
-                aboutus.style.transition = "all 800ms linear 4ms";
-            }
+function closeMenu(event) {
+  event.preventDefault();
+  first_navigation.style.display = "none";
+  navigation_state = false;
+}
 
-            function showMenu(event) {
-              event.preventDefault();
-              // when the navigation_state is false, open the menu.
-              if(navigation_state === false) {
-                first_navigation.style.display = "block";
-                navigation_state = true;
-              } else {
-                // when the navigation_state is true, close the menu.
-                first_navigation.style.display = "none";
-                navigation_state = false;
-              }
-            }
+function showText() {
+  surprise.style.transform = "scaleX(100%)";
+  myownway.style.transform = "scaleX(100%)";
+  background_aboutus.setAttribute("style", "transform:scaleX(100%)");
+}
 
-            function closeMenu(event) {
-              event.preventDefault();
-              first_navigation.style.display = "none";
-              navigation_state = false;
-            }
+function hideText() {
+  surprise.style.transform = "scaleX(0)";
+  myownway.style.transform = "scaleX(0)";
+  background_aboutus.setAttribute("style", "transform:scaleX(0)");
+}
 
 function clickHandler(event) {
 
   event.preventDefault();
+  hideText();
+
   const href = this.getAttribute("href");
-    about_us_state = false;
   const offsetTop = document.querySelector(href).offsetTop;
   scroll({
     top: offsetTop,
@@ -62,15 +72,16 @@ function clickHandler(event) {
 
 function clickHandlerforAbout(event) {
 
-    event.preventDefault();
-      about_us_state = true;
-    scroll({
-        top: document.body.getElementsByClassName("about")[0].offsetTop,
-        behavior: "smooth"
-    });
+  event.preventDefault();
+  showText();
+
+  scroll({
+    top: document.body.getElementsByClassName("about")[0].offsetTop,
+    behavior: "smooth"
+  });
 
 }
-  
+
 
 /* --------------------------experimental---------------------------------------
     const href = this.getAttribute("href");
@@ -87,71 +98,59 @@ let mynav = document.getElementById("navbar");
 
 let mediaQuery = window.matchMedia('(min-width: 20em)');
 
-if(!mediaQuery.matches) {
+if (!mediaQuery.matches) {
   logo.addEventListener("click", showMenu);
 }
 
-about_us[0].addEventListener("click", reduceMe);
-about_us[1].addEventListener("click", increaseMe);
-logo.addEventListener("click", clickHandler);
-
-for(let index = 0; index < 4; index++) {
+for (let index = 0; index < navbar_links.length; index++) {
   // if the display width is smaller than or equal to 19em = 304pixel,
   // then you can close de navbar, when the link is clicked.
-  if(!mediaQuery.matches) {
+  if (!mediaQuery.matches) {
     navbar_links[index].addEventListener("click", closeMenu);
   }
 }
 
 for (let index = 0; index < navbar_links.length; index++) {
-    if(navbar_links[index] === about_us[0] || navbar_links[index] === about_us[1]) {
-        navbar_links[index].addEventListener("click", clickHandlerforAbout);
-    } else {
-        navbar_links[index].addEventListener("click", clickHandler);
-    } 
-}
+  if (navbar_links[index] === about_us[0] || navbar_links[index] === about_us[1]) {
 
-window.onscroll = function() {scrollFunction()};
-
-const myownway = document.querySelector('.myownway');
-
-function scrollFunction() {
-
-  const  href = navbar_links[0].getAttribute("href");
-  const offsetTop = document.querySelector(href).offsetTop;
-
-if(mediaQuery.matches) {
-  if(document.body.scrollTop >=  offsetTop || document.documentElement.scrollTop >= offsetTop) {
-    mybutton.style.display = "block";
-    mynav.style.display = "block";
-
-    if(about_us_state) {
-        surprise.style.transform ="scaleX(100%)";
-        myownway.style.transform = "scaleX(100%)";
-        background_aboutus.setAttribute("style", "transform:scaleX(100%)");
-    } else {
-        surprise.style.transform ="scaleX(0)";
-        myownway.style.transform = "scaleX(0)";
-        background_aboutus.setAttribute("style", "transform:scaleX(0)");
-    }
-
-
-    for(let index = 0; index < 4; index++) {
-        document.getElementsByClassName("navbar-link")[index].style.visibility = "hidden";
-    }
+    navbar_links[index].addEventListener("click", clickHandlerforAbout);
 
   } else {
 
-    mynav.style.display = "none";
-    mybutton.style.display = "none";
+    navbar_links[index].addEventListener("click", clickHandler);
 
-    for(let index = 0; index < 4; index++) {
+  }
+}
+
+window.onscroll = function () { scrollFunction() };
+
+
+function scrollFunction() {
+
+  const href = navbar_links[0].getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+
+  if (mediaQuery.matches) {
+    if (document.body.scrollTop >= offsetTop || document.documentElement.scrollTop >= offsetTop) {
+      mybutton.style.display = "block";
+      mynav.style.display = "block";
+
+      for (let index = 0; index < 4; index++) {
+        document.getElementsByClassName("navbar-link")[index].style.visibility = "hidden";
+      }
+
+    } else {
+
+      mynav.style.display = "none";
+      mybutton.style.display = "none";
+
+      for (let index = 0; index < 4; index++) {
         document.getElementsByClassName("navbar-link")[index].style.visibility = "visible";
+      }
+
     }
 
   }
-
- }
 
 }
 
