@@ -1,21 +1,20 @@
 
             // Select all the elements from the body with the class 'about-us'.
-            const about_us = document.querySelectorAll(".about-us");
+            const about_us = document.getElementsByClassName("about-us");
             const logo = document.querySelector(".logo");
             const first_navigation = document.querySelector(".navbar");
             // navigation_state tell if the first navbar is closed or opened.
             let navigation_state = false;
 
-            logo.addEventListener("click", clickHandler);
+            let about_us_state = false; 
+
+            
 
             // Select all the elements from the body with the class 'navbar-link'.
             const navbar_links = document.getElementsByClassName("navbar-link");
             const aboutus = document.getElementsByClassName("about-content")[0];
             const surprise = document.getElementsByClassName("about-content")[1];
             const background_aboutus = document.getElementById("background-aboutus");
-
-            about_us[0].addEventListener("click", reduceMe);
-            about_us[1].addEventListener("click", increaseMe);
 
             function reduceMe(event) {
                 event.preventDefault();
@@ -52,6 +51,7 @@ function clickHandler(event) {
 
   event.preventDefault();
   const href = this.getAttribute("href");
+    about_us_state = false;
   const offsetTop = document.querySelector(href).offsetTop;
   scroll({
     top: offsetTop,
@@ -63,7 +63,7 @@ function clickHandler(event) {
 function clickHandlerforAbout(event) {
 
     event.preventDefault();
-
+      about_us_state = true;
     scroll({
         top: document.body.getElementsByClassName("about")[0].offsetTop,
         behavior: "smooth"
@@ -91,6 +91,10 @@ if(!mediaQuery.matches) {
   logo.addEventListener("click", showMenu);
 }
 
+about_us[0].addEventListener("click", reduceMe);
+about_us[1].addEventListener("click", increaseMe);
+logo.addEventListener("click", clickHandler);
+
 for(let index = 0; index < 4; index++) {
   // if the display width is smaller than or equal to 19em = 304pixel,
   // then you can close de navbar, when the link is clicked.
@@ -99,39 +103,40 @@ for(let index = 0; index < 4; index++) {
   }
 }
 
-for (const navbar_link of navbar_links) {
-    if(navbar_link === about_us[0] || navbar_link === about_us[1]) {
-        navbar_link.addEventListener("click", clickHandlerforAbout);
+for (let index = 0; index < navbar_links.length; index++) {
+    if(navbar_links[index] === about_us[0] || navbar_links[index] === about_us[1]) {
+        navbar_links[index].addEventListener("click", clickHandlerforAbout);
     } else {
-        navbar_link.addEventListener("click", clickHandler);
+        navbar_links[index].addEventListener("click", clickHandler);
     } 
 }
 
 window.onscroll = function() {scrollFunction()};
 
 const myownway = document.querySelector('.myownway');
-let state = true; 
 
 function scrollFunction() {
-  let  href = [];
-  href.push(navbar_links[2].getAttribute("href"), navbar_links[0].getAttribute("href"));
-  let offsetTop = [];
-  offsetTop.push(document.querySelector(href[0]).offsetTop, document.querySelector(href[1]).offsetTop);
+
+  const  href = navbar_links[0].getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+
 if(mediaQuery.matches) {
-  if(document.body.scrollTop >=  offsetTop[1]|| document.documentElement.scrollTop >= offsetTop[1]) {
+  if(document.body.scrollTop >=  offsetTop || document.documentElement.scrollTop >= offsetTop) {
     mybutton.style.display = "block";
     mynav.style.display = "block";
-    if(document.body.scrollTop === offsetTop[0] && state === true || document.documentElement.srollTop === offsetTop[0] && state === true) {
+
+    if(about_us_state) {
         surprise.style.transform ="scaleX(100%)";
         myownway.style.transform = "scaleX(100%)";
         background_aboutus.setAttribute("style", "transform:scaleX(100%)");
-        state = false;
+        about_us_state = false;
     } else {
         surprise.style.transform ="scaleX(0)";
         myownway.style.transform = "scaleX(0)";
         background_aboutus.setAttribute("style", "transform:scaleX(0)");
-        state = true;
+        about_us_state = true;
     }
+
 
     for(let index = 0; index < 4; index++) {
         document.getElementsByClassName("navbar-link")[index].style.visibility = "hidden";
@@ -141,11 +146,6 @@ if(mediaQuery.matches) {
 
     mynav.style.display = "none";
     mybutton.style.display = "none";
-    surprise.style.transform ="scaleX(0)";
-    aboutus.style.backgroundColor = "hsla(120, 73%, 75%, 0.432)";
-    aboutus.style.transition = "all 800ms linear 4ms";
-    myownway.style.transform = "scaleX(0)";
-    background_aboutus.setAttribute("style", "transform:scaleX(0)");
 
     for(let index = 0; index < 4; index++) {
         document.getElementsByClassName("navbar-link")[index].style.visibility = "visible";
