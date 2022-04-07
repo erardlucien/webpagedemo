@@ -9,8 +9,8 @@ let navigation_state = false;
 
 // Select all the elements from the body with the class 'navbar-link'.
 const navbar_links = document.getElementsByClassName("navbar-link");
-const aboutus = document.getElementsByClassName("about-content")[0];
-const surprise = document.getElementsByClassName("about-content")[1];
+const aboutus = document.getElementById("aboutus");
+const surprise = document.getElementById("surprise");
 const background_aboutus = document.getElementById("background-aboutus");
 
 function reduceMe(event) {
@@ -62,6 +62,7 @@ function clickHandler(event) {
 
   const href = this.getAttribute("href");
   const offsetTop = document.querySelector(href).offsetTop;
+  hideText();
   scroll({
     top: offsetTop,
     behavior: "smooth"
@@ -72,6 +73,8 @@ function clickHandler(event) {
 function clickHandlerforAbout(event) {
 
   event.preventDefault();
+
+  showText();
 
   scroll({
     top: document.body.getElementsByClassName("about")[0].offsetTop,
@@ -91,12 +94,10 @@ function clickHandlerforAbout(event) {
   --------------------------experimental--------------------------------------- */
 
 //Get the button and navbar
-let mybutton = document.getElementById("up-button");
-let mynav = document.getElementById("navbar");
+const mybutton = document.getElementById("up-button");
+const mynav = document.getElementById("navbar");
 
 let mediaQuery = window.matchMedia('(min-width: 20em)');
-let mediaQuery1 = window.matchMedia('(min-width: 20em) and (max-width: 39em)');
-let mediaQuery2 = window.matchMedia('(min-width: 40em)');
 
 if (!mediaQuery.matches) {
   logo.addEventListener("click", showMenu);
@@ -129,60 +130,25 @@ function scrollFunction() {
 
   const href = navbar_links[0].getAttribute("href");
   const offsetTop = document.querySelector(href).offsetTop;
-  const href1 = navbar_links[1].getAttribute("href");
-  const offsetTop1 = document.querySelector(href1).offsetTop;
-  if (mediaQuery1.matches) {
-    if (document.body.scrollTop >= offsetTop && document.body.scrollTop <= offsetTop1
-      || document.documentElement.scrollTop >= offsetTop && document.documentElement.scrollTop <= offsetTop1) {
-      hideText();
-      mybutton.style.display = "block";
+
+  if(mediaQuery.matches) {
+    if(document.body.scrollTop >= offsetTop || document.documentElement.scrollTop >= offsetTop) {
       mynav.style.display = "block";
-
-      for (let index = 0; index < 4; index++) {
-        document.getElementsByClassName("navbar-link")[index].style.visibility = "hidden";
-      }
-
-    } else if (document.body.scrollTop >= offsetTop1 || document.documentElement.scrollTop >= offsetTop1) {
-      showText();
       mybutton.style.display = "block";
-      mynav.style.display = "block";
 
-      for (let index = 0; index < 4; index++) {
-        document.getElementsByClassName("navbar-link")[index].style.visibility = "hidden";
+      for(let index = 0; index < 4; index++) {
+        navbar_links[index].style.visibility = "collapse";
       }
 
     } else {
-      hideText();
       mynav.style.display = "none";
       mybutton.style.display = "none";
 
-      for (let index = 0; index < 4; index++) {
-        document.getElementsByClassName("navbar-link")[index].style.visibility = "visible";
+      for(let index = 0; index < 4; index++) {
+        navbar_links[index].style.visibility = "visible";
       }
 
     }
-
-  } else if (mediaQuery2.matches) {
-    if (document.body.scrollTop >= offsetTop || document.documentElement.scrollTop >= offsetTop) {
-      showText();
-      mybutton.style.display = "block";
-      mynav.style.display = "block";
-
-      for (let index = 0; index < 4; index++) {
-        document.getElementsByClassName("navbar-link")[index].style.visibility = "hidden";
-      }
-
-    } else {
-      hideText();
-      mynav.style.display = "none";
-      mybutton.style.display = "none";
-
-      for (let index = 0; index < 4; index++) {
-        document.getElementsByClassName("navbar-link")[index].style.visibility = "visible";
-      }
-
-    }
-
   }
 
 }
