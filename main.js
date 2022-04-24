@@ -47,13 +47,13 @@ function closeMenu(event) {
 function showText() {
   surprise.style.transform = "scaleX(100%)";
   myownway.style.transform = "scaleX(100%)";
-  background_aboutus.setAttribute("style", "transform:scaleX(100%)");
+  background_aboutus.style.transform = "scaleX(100%)";
 }
 
 function hideText() {
   surprise.style.transform = "scaleX(0)";
   myownway.style.transform = "scaleX(0)";
-  background_aboutus.setAttribute("style", "transform:scaleX(0)");
+  background_aboutus.style.transform = "scaleX(0)";
 }
 
 function clickHandler(event) {
@@ -62,7 +62,6 @@ function clickHandler(event) {
 
   const href = this.getAttribute("href");
   const offsetTop = document.querySelector(href).offsetTop;
-  hideText();
   scroll({
     top: offsetTop,
     behavior: "smooth"
@@ -73,8 +72,6 @@ function clickHandler(event) {
 function clickHandlerforAbout(event) {
 
   event.preventDefault();
-
-  showText();
 
   scroll({
     top: document.body.getElementsByClassName("about")[0].offsetTop,
@@ -123,35 +120,36 @@ for (let index = 0; index < navbar_links.length; index++) {
   }
 }
 
-window.onscroll = function () { scrollFunction() };
+window.addEventListener("scroll", function() {
 
+  if ((document.body.scrollTop >= 20) || (document.documentElement.scrollTop >= 20)) {
 
-function scrollFunction() {
+    mynav.style.display = "block";
+    mybutton.style.display = "block";
 
-  const href = navbar_links[0].getAttribute("href");
-  const offsetTop = document.querySelector(href).offsetTop;
-
-  if(mediaQuery.matches) {
-    if(document.body.scrollTop >= offsetTop || document.documentElement.scrollTop >= offsetTop) {
-      mynav.style.display = "block";
-      mybutton.style.display = "block";
-
-      for(let index = 0; index < 4; index++) {
-        navbar_links[index].style.visibility = "collapse";
-      }
-
-    } else {
-      mynav.style.display = "none";
-      mybutton.style.display = "none";
-
-      for(let index = 0; index < 4; index++) {
-        navbar_links[index].style.visibility = "visible";
-      }
-
+    for (let index = 0; index < 4; index++) {
+      navbar_links[index].style.visibility = "collapse";
     }
+
+    if(document.getElementById("about").getBoundingClientRect().top < window.innerHeight - 300) {
+      showText();
+    } else {
+      hideText();
+    }
+    
+  } else {
+
+    mynav.style.display = "none";
+    mybutton.style.display = "none";
+
+    for (let index = 0; index < 4; index++) {
+      navbar_links[index].style.visibility = "visible";
+    }
+
+    hideText();
   }
 
-}
+});
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
