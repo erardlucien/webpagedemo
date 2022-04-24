@@ -122,31 +122,40 @@ for (let index = 0; index < navbar_links.length; index++) {
 
 window.addEventListener("scroll", function() {
 
-  if ((document.body.scrollTop >= 20) || (document.documentElement.scrollTop >= 20)) {
+  if(mediaQuery.matches) {
+    if ((document.body.scrollTop >= 20) || (document.documentElement.scrollTop >= 20)) {
 
-    mynav.style.display = "block";
-    mybutton.style.display = "block";
-
-    for (let index = 0; index < 4; index++) {
-      navbar_links[index].style.visibility = "collapse";
+      mynav.style.display = "block";
+      mybutton.style.display = "block";
+  
+      for (let index = 0; index < 4; index++) {
+        navbar_links[index].style.visibility = "collapse";
+      }
+  
+      if(document.getElementById("about").getBoundingClientRect().top < window.innerHeight + window.scrollY) {
+        showText();
+      } else {
+        hideText();
+      }
+      
+    } else {
+  
+      mynav.style.display = "none";
+      mybutton.style.display = "none";
+  
+      for (let index = 0; index < 4; index++) {
+        navbar_links[index].style.visibility = "visible";
+      }
+  
+      hideText();
     }
-
-    if(document.getElementById("about").getBoundingClientRect().top < window.innerHeight - 300) {
+  
+  } else {
+    if(document.getElementById("about").getBoundingClientRect().top < window.innerHeight + window.scrollY) {
       showText();
     } else {
       hideText();
     }
-    
-  } else {
-
-    mynav.style.display = "none";
-    mybutton.style.display = "none";
-
-    for (let index = 0; index < 4; index++) {
-      navbar_links[index].style.visibility = "visible";
-    }
-
-    hideText();
   }
 
 });
