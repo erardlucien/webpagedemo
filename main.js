@@ -94,16 +94,16 @@ function clickHandlerforAbout(event) {
 const mybutton = document.getElementById("up-button");
 const mynav = document.getElementById("navbar");
 
-let mediaQuery = window.matchMedia('(min-width: 20em)');
+let mediaQuery = [ window.matchMedia('(min-width: 20em)'), window.matchMedia('(min-width: 40em)'), window.matchMedia('(max-width: 40em)')];
 
-if (!mediaQuery.matches) {
+if (!mediaQuery[0].matches) {
   logo.addEventListener("click", showMenu);
 }
 
 for (let index = 0; index < navbar_links.length; index++) {
   // if the display width is smaller than or equal to 19em = 304pixel,
   // then you can close de navbar, when the link is clicked.
-  if (!mediaQuery.matches) {
+  if (!mediaQuery[0].matches) {
     navbar_links[index].addEventListener("click", closeMenu);
   }
 }
@@ -122,7 +122,7 @@ for (let index = 0; index < navbar_links.length; index++) {
 
 window.addEventListener("scroll", function() {
 
-  if(mediaQuery.matches) {
+  if(mediaQuery[0].matches || mediaQuery[1].matches) {
     if ((document.body.scrollTop >= 20) || (document.documentElement.scrollTop >= 20)) {
 
       mynav.style.display = "block";
@@ -131,8 +131,13 @@ window.addEventListener("scroll", function() {
       for (let index = 0; index < 4; index++) {
         navbar_links[index].style.visibility = "collapse";
       }
-  
-      if(document.getElementById("about").getBoundingClientRect().top < window.innerHeight + window.scrollY) {
+
+      if(document.getElementById("about").getBoundingClientRect().top < window.innerHeight - 300 &&
+      document.getElementById("contact").getBoundingClientRect().top > window.innerHeight && mediaQuery[1].matches) {
+        showText();
+      } else if(document.getElementById("about").getBoundingClientRect().top < window.innerHeight - 300 &&
+      document.getElementById("contact").getBoundingClientRect().top > window.innerHeight - 300 && mediaQuery[0].matches && 
+      mediaQuery[2].matches) {
         showText();
       } else {
         hideText();
@@ -150,12 +155,6 @@ window.addEventListener("scroll", function() {
       hideText();
     }
   
-  } else {
-    if(document.getElementById("about").getBoundingClientRect().top < window.innerHeight + window.scrollY) {
-      showText();
-    } else {
-      hideText();
-    }
   }
 
 });
